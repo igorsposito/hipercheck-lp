@@ -28,11 +28,11 @@
                             lightBlue: '#426DA9', 
                         }
                     },
-                    // 🪄 Central de Animações Premium
                     animation: {
                         'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
                         'fade-in-left': 'fadeInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
                         'fade-in-right': 'fadeInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'ping-slow': 'pingSlow 2s cubic-bezier(0, 0, 0.2, 1) infinite', // 🔵 Pulsação do mapa
                     },
                     keyframes: {
                         fadeInUp: {
@@ -46,6 +46,9 @@
                         fadeInRight: {
                             '0%': { opacity: '0', transform: 'translateX(32px)' },
                             '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        pingSlow: { // ✨ Efeito radar
+                            '75%, 100%': { transform: 'scale(2.5)', opacity: '0' }
                         }
                     }
                 }
@@ -156,26 +159,26 @@
             </div>
         </div>
     </section>
-    <!-- 📊 SEÇÃO DE SOLUÇÕES (Grid de Alta Conversão) -->
-    <section id="solucoes" class="py-20 bg-white border-t border-zinc-100 overflow-hidden">
+    <!-- 📊 SEÇÃO DE SOLUÇÕES (Fundo Roxo Serasa) -->
+    <section id="solucoes" class="py-20 bg-serasa-purple border-t border-serasa-purple overflow-hidden">
         <div class="mx-auto max-w-7xl px-6">
             
-            <!-- Título da Seção (Deslizando da Esquerda) -->
+            <!-- Título da Seção (Textos alterados para Branco/Cinza Claro) -->
             <div class="max-w-2xl text-left mb-16 animate-fade-in-left">
-                <h2 class="text-xs font-bold tracking-widest text-serasa-purple uppercase">Serviços Disponíveis</h2>
-                <p class="mt-2 text-3xl font-black tracking-tight text-zinc-950 sm:text-4xl">
+                <h2 class="text-xs font-bold tracking-widest text-serasa-magenta uppercase">Serviços Disponíveis</h2>
+                <p class="mt-2 text-3xl font-black tracking-tight text-white sm:text-4xl">
                     Soluções sob medida para o tamanho do seu negócio
                 </p>
-                <p class="mt-4 text-base text-zinc-600">
+                <p class="mt-4 text-base text-zinc-200">
                     Evite a inadimplência analisando dados de comportamento com as ferramentas oficiais da Serasa Experian.
                 </p>
             </div>
 
-            <!-- 🎛️ O GRID DE CARDS (Surgindo de Baixo com ritmo) -->
+            <!-- 🎛️ O GRID DE CARDS -->
             <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
                 
                 <!-- Card 1: CREDNET -->
-                <div class="group rounded-2xl border border-zinc-200 bg-zinc-50/50 p-6 shadow-sm transition-all duration-300 hover:bg-white hover:shadow-xl hover:border-serasa-purple/30 animate-fade-in-up">
+                <div class="group rounded-2xl border border-white/10 bg-white p-6 shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl animate-fade-in-up">
                     <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-serasa-purple/10 text-serasa-purple font-black text-sm group-hover:bg-serasa-purple group-hover:text-white transition-colors duration-300">
                         CN
                     </div>
@@ -186,7 +189,7 @@
                 </div>
 
                 <!-- Card 2: PEFIN -->
-                <div class="group rounded-2xl border border-zinc-200 bg-zinc-50/50 p-6 shadow-sm transition-all duration-300 hover:bg-white hover:shadow-xl hover:border-serasa-magenta/30 animate-fade-in-up [animation-delay:100ms]">
+                <div class="group rounded-2xl border border-white/10 bg-white p-6 shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl animate-fade-in-up [animation-delay:100ms]">
                     <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-serasa-magenta/10 text-serasa-magenta font-black text-sm group-hover:bg-serasa-magenta group-hover:text-white transition-colors duration-300">
                         PF
                     </div>
@@ -197,7 +200,7 @@
                 </div>
 
                 <!-- Card 3: INFOBUSCA -->
-                <div class="group rounded-2xl border border-zinc-200 bg-zinc-50/50 p-6 shadow-sm transition-all duration-300 hover:bg-white hover:shadow-xl hover:border-serasa-darkBlue/30 animate-fade-in-up [animation-delay:200ms]">
+                <div class="group rounded-2xl border border-white/10 bg-white p-6 shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl animate-fade-in-up [animation-delay:200ms]">
                     <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-serasa-darkBlue/10 text-serasa-darkBlue font-black text-sm group-hover:bg-serasa-darkBlue group-hover:text-white transition-colors duration-300">
                         IB
                     </div>
@@ -208,7 +211,7 @@
                 </div>
 
                 <!-- Card 4: RELATO -->
-                <div class="group rounded-2xl border border-zinc-200 bg-zinc-50/50 p-6 shadow-sm transition-all duration-300 hover:bg-white hover:shadow-xl hover:border-rose-500/30 animate-fade-in-up [animation-delay:300ms]">
+                <div class="group rounded-2xl border border-white/10 bg-white p-6 shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl animate-fade-in-up [animation-delay:300ms]">
                     <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-rose-100 text-rose-600 font-black text-sm group-hover:bg-rose-600 group-hover:text-white transition-colors duration-300">
                         RT
                     </div>
@@ -220,6 +223,162 @@
 
             </div>
 
+        </div>
+    </section>
+
+    <!-- 📈 SEÇÃO DE INDICADORES & COBERTURA NACIONAL -->
+    <section class="py-20 bg-white border-t border-zinc-200 overflow-hidden">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:items-center">
+                
+                <!-- 📝 COLUNA DA ESQUERDA: Resultados Reais e Números -->
+                <div class="space-y-8 animate-fade-in-left">
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-serasa-purple uppercase">— Resultados Reais</span>
+                        <h2 class="mt-2 text-3xl font-black tracking-tight text-zinc-950 sm:text-4xl">
+                            Empresas que vendem a prazo usam a Hiper Check
+                        </h2>
+                        <p class="mt-4 text-base text-zinc-600">
+                            Mais do que consultas, entregamos estabilidade e proteção financeira para negócios de todos os portes expandirem com segurança.
+                        </p>
+                    </div>
+
+                    <!-- Grid de Indicadores (Os contadores do site) -->
+                    <div class="grid grid-cols-2 gap-8 border-t border-zinc-100 pt-8">
+                        <div>
+                            <span class="block text-4xl font-black tracking-tight text-serasa-magenta">+1.500</span>
+                            <span class="mt-1 block text-sm font-semibold text-zinc-900">Empresas atendidas</span>
+                        </div>
+                        <div>
+                            <span class="block text-4xl font-black tracking-tight text-serasa-darkBlue">+12 Anos</span>
+                            <span class="mt-1 block text-sm font-semibold text-zinc-900">De mercado</span>
+                        </div>
+                        <div>
+                            <span class="block text-4xl font-black tracking-tight text-serasa-purple">45+</span>
+                            <span class="mt-1 block text-sm font-semibold text-zinc-900">Segmentos atendidos</span>
+                        </div>
+                        <div>
+                            <span class="block text-4xl font-black tracking-tight text-emerald-600">Milhões</span>
+                            <span class="mt-1 block text-sm font-semibold text-zinc-900">Em valores recuperados</span>
+                        </div>
+                    </div>
+
+                    <!-- Selo de Cobertura -->
+                    <div class="flex items-center gap-3 rounded-xl bg-zinc-50 p-4 border border-zinc-200 w-fit">
+                        <span class="text-xl">🇧🇷</span>
+                        <span class="text-sm font-bold text-zinc-800">BR · Cobertura e monitoramento em território nacional</span>
+                    </div>
+                </div>
+
+                <!-- 🗺️ COLUNA DA DIREITA: O Mapa SVG com as bolinhas piscando -->
+                <div class="relative flex justify-center lg:justify-end animate-fade-in-right">
+                    <div class="relative w-full max-w-md aspect-square bg-zinc-50/50 rounded-2xl border border-zinc-100 p-6 flex items-center justify-center">
+                        
+                        <!-- Desenho em SVG do Mapa do Brasil -->
+                        <svg class="w-full h-full text-zinc-200 fill-current stroke-zinc-300 stroke-1" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Silhueta geométrica/simplificada simulando o Brasil -->
+                            <path d="M190,40 L310,40 L370,90 L420,130 L440,190 L420,240 L390,260 L360,320 L320,380 L290,440 L260,460 L240,460 L230,420 L240,380 L200,340 L160,330 L130,280 L110,240 L70,220 L50,190 L60,160 L100,150 L120,110 L140,90 Z" />
+                            
+                            <!-- 🟢 PONTOS DE PRESENÇA (Bolinhas piscando) -->
+                            <!-- Nordeste (Vitória da Conquista / Base) -->
+                            <g transform="translate(340, 180)">
+                                <circle class="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-serasa-magenta opacity-75" r="8"></circle>
+                                <circle class="relative inline-flex rounded-full h-2 w-2 bg-serasa-magenta" r="4"></circle>
+                            </g>
+                            <!-- Sudeste (São Paulo) -->
+                            <g transform="translate(290, 310)">
+                                <circle class="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-serasa-purple opacity-75" r="8"></circle>
+                                <circle class="relative inline-flex rounded-full h-2 w-2 bg-serasa-purple" r="4"></circle>
+                            </g>
+                            <!-- Sul -->
+                            <g transform="translate(240, 390)">
+                                <circle class="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-serasa-darkBlue opacity-75" r="8"></circle>
+                                <circle class="relative inline-flex rounded-full h-2 w-2 bg-serasa-darkBlue" r="4"></circle>
+                            </g>
+                            <!-- Centro-Oeste -->
+                            <g transform="translate(230, 230)">
+                                <circle class="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-serasa-purple opacity-75" r="8"></circle>
+                                <circle class="relative inline-flex rounded-full h-2 w-2 bg-serasa-purple" r="4"></circle>
+                            </g>
+                            <!-- Norte -->
+                            <g transform="translate(150, 120)">
+                                <circle class="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-serasa-magenta opacity-75" r="8"></circle>
+                                <circle class="relative inline-flex rounded-full h-2 w-2 bg-serasa-magenta" r="4"></circle>
+                            </g>
+                        </svg>
+
+                        <!-- Legenda discreta flutuando no mapa -->
+                        <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm border border-zinc-200 rounded-lg px-3 py-1.5 text-[10px] font-bold text-zinc-500 uppercase tracking-wider shadow-sm">
+                            Pontos de conexão ativos
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4️⃣ SEÇÃO DIFERENCIAIS (Fundo Azul de Autoridade) -->
+    <section id="sobre" class="py-20 bg-serasa-darkBlue border-t border-serasa-darkBlue overflow-hidden">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+                
+                <!-- 📊 COLUNA DA ESQUERDA: Os 3 Pilares -->
+                <div class="space-y-6 order-2 lg:order-1">
+                    
+                    <!-- Pilar 1 -->
+                    <div class="flex gap-4 rounded-xl border border-white/10 bg-white p-5 shadow-lg transition-all duration-300 hover:translate-x-2">
+                        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-serasa-darkBlue text-white font-bold text-lg">
+                            ✓
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-zinc-950">Inadimplência Zero</h4>
+                            <p class="mt-1 text-sm text-zinc-600">Monitore e negative devedores diretamente na base da Serasa Experian, acelerando a recuperação de capitais.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pilar 2 -->
+                    <div class="flex gap-4 rounded-xl border border-white/10 bg-white p-5 shadow-lg transition-all duration-300 hover:translate-x-2">
+                        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-serasa-purple text-white font-bold text-lg">
+                            ✓
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-zinc-950">Decisões em Segundos</h4>
+                            <p class="mt-1 text-sm text-zinc-600">Consulte relatórios completos de CPF ou CNPJ instantaneamente antes de fechar qualquer contrato ou venda a prazo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pilar 3 -->
+                    <div class="flex gap-4 rounded-xl border border-white/10 bg-white p-5 shadow-lg transition-all duration-300 hover:translate-x-2">
+                        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-serasa-magenta text-white font-bold text-lg">
+                            ✓
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-zinc-950">Inteligência de Dados</h4>
+                            <p class="mt-1 text-sm text-zinc-600">Acesse informações cadastrais, comportamentais e de poder aquisitivo atualizadas pelo maior banco de dados da América Latina.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 📝 COLUNA DA DIREITA: Texto Institucional -->
+                <div class="max-w-2xl text-left order-1 lg:order-2 animate-fade-in-right">
+                    <h2 class="text-xs font-bold tracking-widest text-serasa-magenta uppercase">Por que escolher a Hiper Check?</h2>
+                    <p class="mt-2 text-3xl font-black tracking-tight text-white sm:text-4xl">
+                        A parceria certa para blindar as finanças da sua empresa
+                    </p>
+                    <p class="mt-4 text-base text-zinc-200 leading-relaxed">
+                        Como distribuidores autorizados Serasa Experian, unimos a infraestrutura de dados mais robusta do país com um atendimento local ágil, focado em fazer o seu negócio vender mais e receber sempre em dia.
+                    </p>
+                    <div class="mt-8">
+                        <span class="text-sm font-bold text-white hover:text-serasa-magenta transition-colors cursor-pointer flex items-center gap-2">
+                            Conheça nossa história e valores →
+                        </span>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
