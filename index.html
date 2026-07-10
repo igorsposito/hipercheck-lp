@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiper Check — Soluções em Análise de Crédito</title>
+    
+    <!-- 📄 Importando a fonte Roboto do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- 🚀 Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        serasa: {
+                            purple: '#77127B',    
+                            pink: '#C1188B',      
+                            magenta: '#E80070',   
+                            darkBlue: '#1D4F91',  
+                            lightBlue: '#426DA9', 
+                        }
+                    },
+                    // 🪄 Central de Animações Premium
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'fade-in-left': 'fadeInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'fade-in-right': 'fadeInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(16px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-32px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        fadeInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(32px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-zinc-50 text-zinc-900 min-h-screen font-sans antialiased">
+
+<!-- 🧭 HEADER (Modo Claro - Serasa Style) -->
+    <header class="sticky top-0 z-50 w-full border-b border-zinc-200 bg-white/80 backdrop-blur-md">
+        <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+            
+            <!-- 🏷️ LOGO -->
+            <a href="#" class="flex items-center">
+                <img class="h-9 w-auto object-contain" src="logo.png" alt="Hiper Check Logo">
+            </a>
+
+            <!-- 🔗 LINKS DE NAVEGAÇÃO -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-zinc-600">
+                <a href="#solucoes" class="transition-colors hover:text-serasa-purple">Soluções</a>
+                <a href="#sobre" class="transition-colors hover:text-serasa-purple">Sobre Nós</a>
+                <a href="#contato" class="transition-colors hover:text-serasa-purple">Contato</a>
+            </nav>
+
+            <!-- 🎛️ BOTÕES DE AÇÃO -->
+            <div class="flex items-center gap-4">
+                <a href="#" class="hidden sm:inline-block text-sm font-semibold text-zinc-600 hover:text-zinc-900 transition-colors">
+                    Área do Cliente
+                </a>
+                <!-- 🎯 Botão Magenta de Destaque -->
+                <a href="#contato" class="rounded-xl bg-serasa-magenta px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-serasa-magenta/20 transition-all duration-300 hover:bg-rose-600 hover:scale-[1.02] hover:shadow-rose-600/30">
+                    Falar com Especialista
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- 🚀 HERO SECTION (Abertura com animação) -->
+    <section class="relative overflow-hidden py-20 lg:py-32">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+                
+                <!-- 📝 COLUNA DA ESQUERDA: Textos e CTAs (Surgindo de leve) -->
+                <div class="flex flex-col justify-center text-center lg:text-left animate-fade-in-up">
+                    
+                    <!-- Tag discreta de Autoridade -->
+                    <div class="mx-auto lg:mx-0 mb-6 inline-flex items-center gap-2 rounded-full bg-zinc-100 px-4 py-1.5 text-xs font-semibold text-serasa-darkBlue border border-zinc-200">
+                        <span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        Distribuidor Autorizado Serasa Experian
+                    </div>
+
+                    <!-- Título Principal com a força do Roxo e Magenta -->
+                    <h1 class="text-4xl font-black tracking-tight text-zinc-950 sm:text-5xl xl:text-6xl">
+                        Proteja o caixa da sua empresa e <span class="bg-gradient-to-r from-serasa-purple to-serasa-magenta bg-clip-text text-transparent">venda com segurança</span>
+                    </h1>
+
+                    <!-- Subtítulo Vendedor -->
+                    <p class="mt-6 text-lg leading-relaxed text-zinc-600">
+                        Tenha à disposição o maior banco de dados da América Latina. Consulte e negative CPF ou CNPJ de clientes e fornecedores de forma simples, rápida e 100% online.
+                    </p>
+
+                    <!-- Botões de Ação na Hero -->
+                    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#contato" class="w-full sm:w-auto rounded-xl bg-serasa-magenta px-8 py-4 text-base font-bold text-white shadow-xl shadow-serasa-magenta/20 transition-all duration-300 hover:bg-rose-600 hover:scale-[1.02] hover:shadow-rose-600/30 text-center">
+                            Quero Aproveitar as Ofertas
+                        </a>
+                        <a href="#solucoes" class="w-full sm:w-auto rounded-xl border border-zinc-300 bg-white px-8 py-4 text-base font-semibold text-zinc-700 transition-all hover:bg-zinc-50 hover:text-zinc-950 text-center">
+                            Conhecer Soluções
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- 🖼️ COLUNA DA DIREITA: Painel Visual (Surgindo com um micro atraso para dar ritmo) -->
+                <div class="relative flex justify-center lg:justify-end animate-fade-in-up [animation-delay:200ms]">
+                    <!-- Um card visual flutuante simulando o sistema enquanto não colocamos a imagem real -->
+                    <div class="relative w-full max-w-md rounded-2xl border border-zinc-200 bg-white p-8 shadow-2xl shadow-zinc-200/50 transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
+                        <div class="flex items-center justify-between border-b border-zinc-100 pb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="h-3 w-3 rounded-full bg-rose-400"></div>
+                                <div class="h-3 w-3 rounded-full bg-amber-400"></div>
+                                <div class="h-3 w-3 rounded-full bg-emerald-400"></div>
+                            </div>
+                            <span class="text-xs font-medium text-zinc-400">hipercheck_painel.php</span>
+                        </div>
+                        <div class="mt-6 space-y-4">
+                            <div class="h-4 w-2/3 rounded bg-zinc-100"></div>
+                            <div class="h-4 w-full rounded bg-zinc-100"></div>
+                            <div class="grid grid-cols-3 gap-4 py-2">
+                                <div class="h-16 rounded-xl bg-serasa-purple/5 border border-serasa-purple/10 flex flex-col justify-center items-center">
+                                    <span class="text-xs font-bold text-serasa-purple">PEFIN</span>
+                                </div>
+                                <div class="h-16 rounded-xl bg-serasa-magenta/5 border border-serasa-magenta/10 flex flex-col justify-center items-center">
+                                    <span class="text-xs font-bold text-serasa-magenta">CREDNET</span>
+                                </div>
+                                <div class="h-16 rounded-xl bg-serasa-darkBlue/5 border border-serasa-darkBlue/10 flex flex-col justify-center items-center">
+                                    <span class="text-xs font-bold text-serasa-darkBlue">RELATO</span>
+                                </div>
+                            </div>
+                            <div class="h-4 w-3/4 rounded bg-zinc-100"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- 📊 SEÇÃO DE SOLUÇÕES (Grid de Alta Conversão) -->
+    <section id="solucoes" class="py-20 bg-white border-t border-zinc-100 overflow-hidden">
+        <div class="mx-auto max-w-7xl px-6">
+            
+            <!-- Título da Seção (Deslizando da Esquerda) -->
+            <div class="max-w-2xl text-left mb-16 animate-fade-in-left">
+                <h2 class="text-xs font-bold tracking-widest text-serasa-purple uppercase">Serviços Disponíveis</h2>
+                <p class="mt-2 text-3xl font-black tracking-tight text-zinc-950 sm:text-4xl">
+                    Soluções sob medida para o tamanho do seu negócio
+                </p>
+                <p class="mt-4 text-base text-zinc-600">
+                    Evite a inadimplência analisando dados de comportamento com as ferramentas oficiais da Serasa Experian.
+                </p>
+            </div>
+
+            <!-- 🎛️ O GRID DE CARDS (Surgindo de Baixo com ritmo) -->
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                
+                <!-- Card 1: CREDNET -->
+                <div class="group rounded-2xl border border-zinc-200 bg-zinc-50/50 p-6 shadow-sm transition-all duration-300 hover:bg-white hover:shadow-xl hover:border-serasa-purple/30 animate-fade-in-up">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-serasa-purple/10 text-serasa-purple font-black text-sm group-hover:bg-serasa-purple group-hover:text-white transition-colors duration-300">
+                        CN
+                    </div>
+                    <h3 class="mt-4 text-lg font-bold text-zinc-950">Consulta Crednet</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-zinc-600">
+                        Análise de crédito completa que aponta dívidas ativas e registros nas principais formas de negativação nacional.
+                    </p>
+                </div>
+
+                <!-- Card 2: PEFIN -->
+                <div class="group rounded-2xl border border-zinc-200 bg-zinc-50/50 p-6 shadow-sm transition-all duration-300 hover:bg-white hover:shadow-xl hover:border-serasa-magenta/30 animate-fade-in-up [animation-delay:100ms]">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-serasa-magenta/10 text-serasa-magenta font-black text-sm group-hover:bg-serasa-magenta group-hover:text-white transition-colors duration-300">
+                        PF
+                    </div>
+                    <h3 class="mt-4 text-lg font-bold text-zinc-950">Negativação PEFIN</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-zinc-600">
+                        Inclusão direta de devedores na base Serasa, emitindo notificações automáticas para recuperação rápida de dívidas.
+                    </p>
+                </div>
+
+                <!-- Card 3: INFOBUSCA -->
+                <div class="group rounded-2xl border border-zinc-200 bg-zinc-50/50 p-6 shadow-sm transition-all duration-300 hover:bg-white hover:shadow-xl hover:border-serasa-darkBlue/30 animate-fade-in-up [animation-delay:200ms]">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-serasa-darkBlue/10 text-serasa-darkBlue font-black text-sm group-hover:bg-serasa-darkBlue group-hover:text-white transition-colors duration-300">
+                        IB
+                    </div>
+                    <h3 class="mt-4 text-lg font-bold text-zinc-950">Infobusca Cadastral</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-zinc-600">
+                        A ferramenta perfeita para localizar e qualificar clientes através de dados comportamentais e cadastrais limpos.
+                    </p>
+                </div>
+
+                <!-- Card 4: RELATO -->
+                <div class="group rounded-2xl border border-zinc-200 bg-zinc-50/50 p-6 shadow-sm transition-all duration-300 hover:bg-white hover:shadow-xl hover:border-rose-500/30 animate-fade-in-up [animation-delay:300ms]">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-rose-100 text-rose-600 font-black text-sm group-hover:bg-rose-600 group-hover:text-white transition-colors duration-300">
+                        RT
+                    </div>
+                    <h3 class="mt-4 text-lg font-bold text-zinc-950">Relatório Relato</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-zinc-600">
+                        Visão profunda de empresas do mercado brasileiro, englobando histórico de sócios e hábitos de pagamento.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
