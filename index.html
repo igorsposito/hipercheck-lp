@@ -126,35 +126,120 @@
                 </div>
 
                 <!-- 🖼️ COLUNA DA DIREITA: Painel Visual (Surgindo com um micro atraso para dar ritmo) -->
-                <div class="relative flex justify-center lg:justify-end animate-fade-in-up [animation-delay:200ms]">
-                    <!-- Um card visual flutuante simulando o sistema enquanto não colocamos a imagem real -->
-                    <div class="relative w-full max-w-md rounded-2xl border border-zinc-200 bg-white p-8 shadow-2xl shadow-zinc-200/50 transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
-                        <div class="flex items-center justify-between border-b border-zinc-100 pb-4">
-                            <div class="flex items-center gap-3">
-                                <div class="h-3 w-3 rounded-full bg-rose-400"></div>
-                                <div class="h-3 w-3 rounded-full bg-amber-400"></div>
-                                <div class="h-3 w-3 rounded-full bg-emerald-400"></div>
+                <div class="relative flex justify-center lg:justify-end animate-fade-in-right">
+                    <div class="w-full max-w-md h-[400px] rounded-2xl border border-zinc-200 bg-white p-6 shadow-2xl shadow-zinc-200/50 flex flex-col justify-between">
+                        
+                        <div>
+                            <div class="flex items-center justify-between border-b border-zinc-100 pb-3 mb-4">
+                                <div class="flex gap-1.5">
+                                    <span class="h-3 w-3 rounded-full bg-rose-500"></span>
+                                    <span class="h-3 w-3 rounded-full bg-amber-500"></span>
+                                    <span class="h-3 w-3 rounded-full bg-emerald-500"></span>
+                                </div>
+                                <span class="font-mono text-xs text-zinc-400">hipercheck_analise.php</span>
                             </div>
-                            <span class="text-xs font-medium text-zinc-400">hipercheck_painel.php</span>
-                        </div>
-                        <div class="mt-6 space-y-4">
-                            <div class="h-4 w-2/3 rounded bg-zinc-100"></div>
-                            <div class="h-4 w-full rounded bg-zinc-100"></div>
-                            <div class="grid grid-cols-3 gap-4 py-2">
-                                <div class="h-16 rounded-xl bg-serasa-purple/5 border border-serasa-purple/10 flex flex-col justify-center items-center">
-                                    <span class="text-xs font-bold text-serasa-purple">PEFIN</span>
-                                </div>
-                                <div class="h-16 rounded-xl bg-serasa-magenta/5 border border-serasa-magenta/10 flex flex-col justify-center items-center">
-                                    <span class="text-xs font-bold text-serasa-magenta">CREDNET</span>
-                                </div>
-                                <div class="h-16 rounded-xl bg-serasa-darkBlue/5 border border-serasa-darkBlue/10 flex flex-col justify-center items-center">
-                                    <span class="text-xs font-bold text-serasa-darkBlue">RELATO</span>
+
+                            <div class="grid grid-cols-2 gap-2 mb-4">
+                                <button id="btn-crednet" onclick="trocarAba('crednet')" class="flex items-center justify-center gap-2 py-2 px-4 rounded-xl border-2 border-serasa-purple bg-purple-50/50 font-bold text-xs text-serasa-purple transition-all duration-200 cursor-pointer">
+                                    <span class="h-2 w-2 rounded-full bg-serasa-purple"></span>
+                                    CREDNET Completo
+                                </button>
+                                
+                                <button id="btn-score" onclick="trocarAba('score')" class="flex items-center justify-center gap-2 py-2 px-4 rounded-xl border border-zinc-200 bg-zinc-50 font-medium text-xs text-zinc-500 hover:text-zinc-800 hover:border-zinc-300 transition-all duration-200 cursor-pointer">
+                                    <span class="h-2 w-2 rounded-full bg-zinc-300"></span>
+                                    SCORE Serasa
+                                </button>
+                            </div>
+
+                            <div class="rounded-xl bg-zinc-50 p-3 border border-zinc-150 mb-4 space-y-0.5">
+                                <span class="text-[9px] font-bold text-zinc-400 uppercase tracking-wider block">Identificação do Alvo</span>
+                                <div class="flex flex-col sm:flex-row sm:justify-between text-xs gap-0.5 sm:gap-0">
+                                    <span class="font-bold text-zinc-800">Razão Social: <span class="font-medium text-zinc-600">Empresa Fictícia Ltda</span></span>
+                                    <span class="font-mono font-bold text-zinc-800 sm:text-right">CNPJ: <span class="font-medium text-zinc-600">12.345.678/0000-90</span></span>
                                 </div>
                             </div>
-                            <div class="h-4 w-3/4 rounded bg-zinc-100"></div>
+
+                            <div id="conteudo-crednet" class="space-y-3 transition-all duration-300">
+                                <div class="rounded-xl bg-emerald-50/30 p-2.5 border border-emerald-100 flex items-center justify-between">
+                                    <span class="text-xs font-semibold text-zinc-700">Módulo de Restrições Financeiras</span>
+                                    <span class="inline-flex items-center gap-1 rounded-md bg-emerald-50 px-2 py-0.5 text-[11px] font-medium text-emerald-700 border border-emerald-200">
+                                        <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Base Ativa
+                                    </span>
+                                </div>
+
+                                <div class="p-1 space-y-2">
+                                    <div class="flex justify-between items-center text-xs">
+                                        <span class="text-zinc-500 flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> Protestos Estaduais</span>
+                                        <span class="font-bold text-emerald-600 font-mono">Nada Consta</span>
+                                    </div>
+                                    <div class="flex justify-between items-center text-xs">
+                                        <span class="text-zinc-500 flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> Ações Judiciais / Falências</span>
+                                        <span class="font-bold text-emerald-600 font-mono">Nada Consta</span>
+                                    </div>
+                                    <div class="flex justify-between items-center text-xs">
+                                        <span class="text-zinc-500 flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> Cheques Sem Fundo</span>
+                                        <span class="font-bold text-emerald-600 font-mono">Nada Consta</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="conteudo-score" class="space-y-3 hidden transition-all duration-300">
+                                <div class="rounded-xl bg-purple-50/30 p-2.5 border border-purple-100 flex items-center justify-between">
+                                    <span class="text-xs font-semibold text-zinc-700">Módulo de Análise de Risco</span>
+                                    <div class="flex items-center gap-1.5 rounded-md bg-purple-50 px-2 py-0.5 text-[11px] font-medium text-serasa-purple border border-purple-200">
+                                        <span class="h-1.5 w-1.5 rounded-full bg-serasa-magenta animate-ping"></span> Atualizando...
+                                    </div>
+                                </div>
+
+                                <div class="p-1 space-y-2 text-xs">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-zinc-500">⚡ Prospecção de Pagamento</span>
+                                        <span class="font-bold text-zinc-800">Excelente</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-zinc-500">📊 Índice de Inadimplência</span>
+                                        <span class="font-bold text-emerald-600">0.4% (Muito Baixo)</span>
+                                    </div>
+                                </div>
+
+                                <div class="rounded-xl border border-zinc-150 bg-zinc-50/50 p-3 space-y-1.5">
+                                    <div class="flex justify-between items-center text-xs">
+                                        <span class="text-zinc-500">Score calculado:</span>
+                                        <span class="font-bold text-zinc-900 font-mono">945 / 1000</span>
+                                    </div>
+                                    <div class="w-full bg-zinc-200 h-1.5 rounded-full overflow-hidden">
+                                        <div class="bg-gradient-to-r from-serasa-purple to-serasa-magenta h-full w-[94.5%] rounded-full animate-pulse"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                        <p class="text-[11px] text-zinc-400 leading-relaxed text-center pt-3 border-t border-zinc-100">
+                            🔒 Conexão criptografada direta com a base <strong>Serasa Experian</strong>.
+                        </p>
                     </div>
                 </div>
+
+                <script>
+                    function trocarAba(aba) {
+                        const btnCrednet = document.getElementById('btn-crednet');
+                        const btnScore = document.getElementById('btn-score');
+                        const conteudoCrednet = document.getElementById('conteudo-crednet');
+                        const conteudoScore = document.getElementById('conteudo-score');
+
+                        if (aba === 'crednet') {
+                            btnCrednet.className = "flex items-center justify-center gap-2 py-2 px-4 rounded-xl border-2 border-serasa-purple bg-purple-50/50 font-bold text-xs text-serasa-purple transition-all duration-200 cursor-pointer";
+                            btnScore.className = "flex items-center justify-center gap-2 py-2 px-4 rounded-xl border border-zinc-200 bg-zinc-50 font-medium text-xs text-zinc-500 hover:text-zinc-800 hover:border-zinc-300 transition-all duration-200 cursor-pointer";
+                            conteudoCrednet.classList.remove('hidden');
+                            conteudoScore.classList.add('hidden');
+                        } else if (aba === 'score') {
+                            btnScore.className = "flex items-center justify-center gap-2 py-2 px-4 rounded-xl border-2 border-serasa-magenta bg-rose-50/50 font-bold text-xs text-serasa-magenta transition-all duration-200 cursor-pointer";
+                            btnCrednet.className = "flex items-center justify-center gap-2 py-2 px-4 rounded-xl border border-zinc-200 bg-zinc-50 font-medium text-xs text-zinc-500 hover:text-zinc-800 hover:border-zinc-300 transition-all duration-200 cursor-pointer";
+                            conteudoScore.classList.remove('hidden');
+                            conteudoCrednet.classList.add('hidden');
+                        }
+                    }
+                </script>
 
             </div>
         </div>
@@ -266,52 +351,61 @@
                     <!-- Selo de Cobertura -->
                     <div class="flex items-center gap-3 rounded-xl bg-zinc-50 p-4 border border-zinc-200 w-fit">
                         <span class="text-xl">🇧🇷</span>
-                        <span class="text-sm font-bold text-zinc-800">BR · Cobertura e monitoramento em território nacional</span>
+                        <span class="text-sm font-bold text-zinc-800">Cobertura e monitoramento em todo território nacional</span>
                     </div>
                 </div>
 
-                <!-- 🗺️ COLUNA DA DIREITA: O Mapa SVG com as bolinhas piscando -->
+               <!-- 🗺️ COLUNA DA DIREITA: Mapa Local Perfeito com Constelação de Radares -->
                 <div class="relative flex justify-center lg:justify-end animate-fade-in-right">
-                    <div class="relative w-full max-w-md aspect-square bg-zinc-50/50 rounded-2xl border border-zinc-100 p-6 flex items-center justify-center">
+                    <div class="relative w-full max-w-md aspect-square bg-white rounded-2xl border border-zinc-200 p-6 flex items-center justify-center shadow-sm overflow-hidden">
                         
-                        <!-- Desenho em SVG do Mapa do Brasil -->
-                        <svg class="w-full h-full text-zinc-200 fill-current stroke-zinc-300 stroke-1" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Silhueta geométrica/simplificada simulando o Brasil -->
-                            <path d="M190,40 L310,40 L370,90 L420,130 L440,190 L420,240 L390,260 L360,320 L320,380 L290,440 L260,460 L240,460 L230,420 L240,380 L200,340 L160,330 L130,280 L110,240 L70,220 L50,190 L60,160 L100,150 L120,110 L140,90 Z" />
-                            
-                            <!-- 🟢 PONTOS DE PRESENÇA (Bolinhas piscando) -->
-                            <!-- Nordeste (Vitória da Conquista / Base) -->
-                            <g transform="translate(340, 180)">
-                                <circle class="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-serasa-magenta opacity-75" r="8"></circle>
-                                <circle class="relative inline-flex rounded-full h-2 w-2 bg-serasa-magenta" r="4"></circle>
-                            </g>
-                            <!-- Sudeste (São Paulo) -->
-                            <g transform="translate(290, 310)">
-                                <circle class="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-serasa-purple opacity-75" r="8"></circle>
-                                <circle class="relative inline-flex rounded-full h-2 w-2 bg-serasa-purple" r="4"></circle>
-                            </g>
-                            <!-- Sul -->
-                            <g transform="translate(240, 390)">
-                                <circle class="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-serasa-darkBlue opacity-75" r="8"></circle>
-                                <circle class="relative inline-flex rounded-full h-2 w-2 bg-serasa-darkBlue" r="4"></circle>
-                            </g>
-                            <!-- Centro-Oeste -->
-                            <g transform="translate(230, 230)">
-                                <circle class="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-serasa-purple opacity-75" r="8"></circle>
-                                <circle class="relative inline-flex rounded-full h-2 w-2 bg-serasa-purple" r="4"></circle>
-                            </g>
-                            <!-- Norte -->
-                            <g transform="translate(150, 120)">
-                                <circle class="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-serasa-magenta opacity-75" r="8"></circle>
-                                <circle class="relative inline-flex rounded-full h-2 w-2 bg-serasa-magenta" r="4"></circle>
-                            </g>
-                        </svg>
+                        <!-- 🇧🇷 Seu arquivo SVG Local (Impecável e Perfeito) -->
+                        <img class="w-full h-full opacity-[0.15] object-contain select-none pointer-events-none" 
+                             src="mapa-brasil.svg" 
+                             alt="Mapa do Brasil Oficial">
 
-                        <!-- Legenda discreta flutuando no mapa -->
+                        <!-- 🟢 CONSTELAÇÃO DE PONTOS (Calibrada e Fixa por cima da imagem) -->
+                        
+                        <!-- NORTE -->
+                        <div class="absolute top-[25%] left-[28%] flex h-3 w-3 items-center justify-center"><span class="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-serasa-purple opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-serasa-purple"></span></div> <!-- AM -->
+                        <div class="absolute top-[18%] left-[42%] flex h-3 w-3 items-center justify-center"><span class="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-serasa-magenta opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-serasa-magenta"></span></div> <!-- PA -->
+                        <div class="absolute top-[10%] left-[38%] flex h-3 w-3 items-center justify-center"><span class="relative inline-flex rounded-full h-2 w-2 bg-serasa-darkBlue"></span></div> <!-- RR -->
+                        <div class="absolute top-[10%] left-[50%] flex h-3 w-3 items-center justify-center"><span class="relative inline-flex rounded-full h-2 w-2 bg-serasa-purple"></span></div> <!-- AP -->
+                        <div class="absolute top-[35%] left-[18%] flex h-3 w-3 items-center justify-center"><span class="relative inline-flex rounded-full h-2 w-2 bg-serasa-magenta"></span></div> <!-- AC -->
+                        <div class="absolute top-[40%] left-[30%] flex h-3 w-3 items-center justify-center"><span class="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-serasa-darkBlue opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-serasa-darkBlue"></span></div> <!-- RO -->
+                        <div class="absolute top-[38%] left-[48%] flex h-3 w-3 items-center justify-center"><span class="relative inline-flex rounded-full h-2 w-2 bg-serasa-purple"></span></div> <!-- TO -->
+
+                        <!-- NORDESTE -->
+                        <div class="absolute top-[28%] right-[38%] flex h-3 w-3 items-center justify-center"><span class="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-serasa-magenta opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-serasa-magenta"></span></div> <!-- MA -->
+                        <div class="absolute top-[26%] right-[30%] flex h-3 w-3 items-center justify-center"><span class="relative inline-flex rounded-full h-2 w-2 bg-serasa-darkBlue"></span></div> <!-- PI -->
+                        <div class="absolute top-[25%] right-[22%] flex h-3 w-3 items-center justify-center"><span class="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-serasa-purple opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-serasa-purple"></span></div> <!-- CE -->
+                        <div class="absolute top-[25%] right-[14%] flex h-3 w-3 items-center justify-center"><span class="relative inline-flex rounded-full h-2 w-2 bg-serasa-magenta"></span></div> <!-- RN -->
+                        <div class="absolute top-[29%] right-[12%] flex h-3 w-3 items-center justify-center"><span class="relative inline-flex rounded-full h-2 w-2 bg-serasa-darkBlue"></span></div> <!-- PB -->
+                        <div class="absolute top-[33%] right-[14%] flex h-3 w-3 items-center justify-center"><span class="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-serasa-purple opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-serasa-purple"></span></div> <!-- PE -->
+                        <div class="absolute top-[36%] right-[14%] flex h-3 w-3 items-center justify-center"><span class="relative inline-flex rounded-full h-2 w-2 bg-serasa-magenta"></span></div> <!-- AL -->
+                        <div class="absolute top-[39%] right-[16%] flex h-3 w-3 items-center justify-center"><span class="relative inline-flex rounded-full h-2 w-2 bg-serasa-darkBlue"></span></div> <!-- SE -->
+                        <div class="absolute top-[43%] right-[21%] flex h-3 w-3 items-center justify-center"><span class="animate-ping-slow absolute inline-flex h-6 w-6 rounded-full bg-serasa-magenta opacity-90"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-serasa-magenta shadow"></span></div> <!-- BA -->
+
+                        <!-- CENTRO-OESTE -->
+                        <div class="absolute top-[50%] left-[45%] flex h-3 w-3 items-center justify-center"><span class="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-serasa-purple opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-serasa-purple"></span></div> <!-- MT -->
+                        <div class="absolute top-[54%] left-[56%] flex h-3 w-3 items-center justify-center"><span class="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-serasa-magenta opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-serasa-magenta"></span></div> <!-- GO / DF -->
+                        <div class="absolute bottom-[35%] left-[46%] flex h-3 w-3 items-center justify-center"><span class="relative inline-flex rounded-full h-2 w-2 bg-serasa-darkBlue"></span></div> <!-- MS -->
+
+                        <!-- SUDESTE -->
+                        <div class="absolute bottom-[38%] right-[36%] flex h-3 w-3 items-center justify-center"><span class="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-serasa-purple opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-serasa-purple"></span></div> <!-- MG -->
+                        <div class="absolute bottom-[30%] right-[32%] flex h-3 w-3 items-center justify-center"><span class="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-serasa-darkBlue opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-serasa-darkBlue"></span></div> <!-- SP -->
+                        <div class="absolute bottom-[36%] right-[26%] flex h-3 w-3 items-center justify-center"><span class="relative inline-flex rounded-full h-2 w-2 bg-serasa-magenta"></span></div> <!-- ES -->
+                        <div class="absolute bottom-[32%] right-[28%] flex h-3 w-3 items-center justify-center"><span class="relative inline-flex rounded-full h-2 w-2 bg-serasa-purple"></span></div> <!-- RJ -->
+
+                        <!-- SUL -->
+                        <div class="absolute bottom-[24%] left-[54%] flex h-3 w-3 items-center justify-center"><span class="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-serasa-magenta opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-serasa-magenta"></span></div> <!-- PR -->
+                        <div class="absolute bottom-[18%] left-[56%] flex h-3 w-3 items-center justify-center"><span class="relative inline-flex rounded-full h-2 w-2 bg-serasa-darkBlue"></span></div> <!-- SC -->
+                        <div class="absolute bottom-[12%] left-[53%] flex h-3 w-3 items-center justify-center"><span class="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-serasa-purple opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-serasa-purple"></span></div> <!-- RS -->
+
+                        <!-- Legenda flutuante -->
                         <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm border border-zinc-200 rounded-lg px-3 py-1.5 text-[10px] font-bold text-zinc-500 uppercase tracking-wider shadow-sm">
                             Pontos de conexão ativos
                         </div>
-
                     </div>
                 </div>
 
